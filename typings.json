@@ -2,14 +2,8 @@
   "name": "poc",
   "version": false,
   "ambientDependencies": {
-    "es6-shim": "registry:dt/es6-shim#0.31.2+20160317120654",
-    "joi": "registry:dt/joi#6.5.0+20160324101820",
-    "jquery": "registry:dt/jquery#2.0.0+20160303223636",
-    "kendo-ui": "registry:dt/kendo-ui#2016.1.314+20160412131406",
     "react": "registry:dt/react#0.14.0+20160319053454",
     "react-dom": "registry:dt/react-dom#0.14.0+20160316155526",
-    "react-router": "registry:dt/react-router#2.0.0+20160316155526",
-    "rx": "npm:rx/ts/rx.all.d.ts",
-    "rx-dom": "registry:dt/rx-dom#2.5.3+20160412155140"
+    "react-router": "registry:dt/react-router#2.0.0+20160316155526"
   }
 }
