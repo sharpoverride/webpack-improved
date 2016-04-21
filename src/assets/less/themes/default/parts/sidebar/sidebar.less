@@ -1,0 +1,103 @@
+.page-container{
+  margin: 0!important;
+  padding: 0!important;
+  position: relative;
+  .page-sidebar-wrapper{
+    @import "_sidebar";
+      .page-sidebar{
+        &.navbar-collapse.collapse{
+          display: none!important;
+          max-height: none;
+          height: auto!important;
+          overflow: visible!important;
+          padding: 0;
+          box-shadow: none;
+          background-color: #28303b;
+          border-top: 0!important;
+          margin: 20px;
+          width: auto;
+        }
+        &.navbar-collapse.collapse.in{
+          display: block!important;
+        }
+
+        .page-sidebar-menu{
+          padding:20px 0 0 0;
+          list-style: none;
+          margin: 0;
+
+          &>li{
+            display: block;
+            margin:0;
+            padding: 0;
+            border: 0;
+            &>a{
+              position: relative;
+            }
+          }
+          &>li.start{
+            &>a{
+              border-top: 1px solid #364150;
+              color: #b4bcc8;
+              display: block;
+              position: relative;
+              margin: 0;
+              border: 0;
+              padding: 10px 15px;
+              text-decoration: none;
+              font-size: 14px;
+              font-weight: 300;
+              &>i[class^=icon-]{
+                color: #6b788b;
+                margin-left: 1px;
+                margin-right: 4px;
+                font-size: 16px;
+                margin-right: 5px;
+                text-shadow: none;
+                top: 1px;
+                position: relative;
+              }
+              .title{
+                color: #b4bcc8;
+              }
+              .arrow{
+                border-radius: 0 !important;
+                color: #b4bcc8;
+              }
+            }
+          }
+          li{
+            ul.sub-menu{
+              background-color: #28303b!important;
+              list-style: none;
+              display: none;
+              padding: 0;
+              margin: 8px 0;
+
+              li{
+                background: 0 0;
+                margin: 0;
+                padding: 0;
+                margin-top: 1px!important;
+                border-radius: 0!important;
+                a{
+                  color: #b4bcc8;
+                  display: block;
+                  margin: 0;
+                  padding: 6px 15px 6px 43px;
+                  text-decoration: none;
+                  font-size: 14px;
+                  font-weight: 300;
+                  background: 0 0;
+                  position: relative;
+                }
+              }
+
+            }
+          }
+        }
+        /*/entry-page-sideabar*/
+      }
+  }
+  /*end page-container*/
+}
