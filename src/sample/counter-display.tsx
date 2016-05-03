@@ -2,6 +2,7 @@ import * as React from 'react';
 import * as Rx from 'rxjs';
 
 import Context from '../context';
+import {count} from '../context/accessor';
 
 interface CounterDisplayState  {
     count?: number;
@@ -11,16 +12,14 @@ export default class CounterDisplay extends React.Component<any, CounterDisplayS
     subscription: Rx.Subscription;
 
     componentWillMount() {
-        console.log('will mount');
         this.subscription = Context.subscribe((appStateCursor) => {
             this.setState({
-                count: appStateCursor.get('count')
+                count: count(appStateCursor)
             });
         });
     }
 
     componentWillUnmount() {
-        console.log('will unmount');
         this.subscription.unsubscribe();
     }
 

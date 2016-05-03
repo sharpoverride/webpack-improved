@@ -21,7 +21,6 @@ export default class CounterIncrease extends React.Component<any, any> {
 
     increase() {
         const {appState, count} = this;
-        console.log('increase', count, count + 1);
         appState.set('count', count + 1);
     }
 

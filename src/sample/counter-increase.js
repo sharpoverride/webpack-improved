@@ -23,7 +23,6 @@ var CounterIncrease = (function (_super) {
     };
     CounterIncrease.prototype.increase = function () {
         var _a = this, appState = _a.appState, count = _a.count;
-        console.log('increase', count, count + 1);
         appState.set('count', count + 1);
     };
     CounterIncrease.prototype.render = function () {

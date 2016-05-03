@@ -6,6 +6,7 @@ var __extends = (this && this.__extends) || function (d, b) {
 };
 var React = require('react');
 var context_1 = require('../context');
+var accessor_1 = require('../context/accessor');
 var CounterDisplay = (function (_super) {
     __extends(CounterDisplay, _super);
     function CounterDisplay() {
@@ -13,15 +14,13 @@ var CounterDisplay = (function (_super) {
     }
     CounterDisplay.prototype.componentWillMount = function () {
         var _this = this;
-        console.log('will mount');
         this.subscription = context_1.default.subscribe(function (appStateCursor) {
             _this.setState({
-                count: appStateCursor.get('count')
+                count: accessor_1.count(appStateCursor)
             });
         });
     };
     CounterDisplay.prototype.componentWillUnmount = function () {
-        console.log('will unmount');
         this.subscription.unsubscribe();
     };
     CounterDisplay.prototype.render = function () {
