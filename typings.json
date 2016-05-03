@@ -2,6 +2,7 @@
   "name": "poc",
   "version": false,
   "ambientDependencies": {
+    "es6-shim": "registry:dt/es6-shim#0.31.2+20160317120654",
     "react": "registry:dt/react#0.14.0+20160319053454",
     "react-dom": "registry:dt/react-dom#0.14.0+20160316155526",
     "react-router": "registry:dt/react-router#2.0.0+20160316155526"

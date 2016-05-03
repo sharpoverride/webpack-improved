@@ -16,24 +16,6 @@ module.exports = {
         net: 'mock',
         dns: 'mock'
     },
-    devServer: {
-        publicPath: '/assets',
-        filename: 'bundle.js',
-        port: 8080,
-        host: '0.0.0.0',
-        proxy: {
-            '/*': {
-                target: '//www.ucms.demo',
-                secure: false,
-                bypass: function (req, res, proxyOptions) {
-                    if (req.url.endsWith('favicon.ico') ||
-                        req.url.startsWith('/assets')) {
-                        return req.url;
-                    }
-                    return '/index.html';
-                }
-            }
-        }
-    }
+    devServer: require('./dev-server.config')
 }
 
