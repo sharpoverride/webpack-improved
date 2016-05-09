@@ -55,10 +55,12 @@
     "webpack-livereload-plugin": "^0.7.0"
   },
   "dependencies": {
-    "classnames": "^2.2.3",
+    "classnames": "^2.2.5",
     "immutable": "^3.7.6",
+    "joi": "^8.1.0",
     "react": "^15.0.1",
     "react-dom": "^15.0.1",
-    "react-router": "^2.0.1"
+    "react-router": "^2.0.1",
+    "rxjs": "^5.0.0-beta.7"
   }
 }

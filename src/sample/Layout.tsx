@@ -1,7 +1,12 @@
 import * as React from 'react';
+import TopNavigation from './TopNavigation';
 
 const Layout = (props) => {
-    return (<div>{props.children}</div>);
+    console.log(`Layout `, props.location.pathname);
+    return (<div>
+        <TopNavigation activePage={props.location.pathname}/>
+        {props.children}
+    </div>);
 };
 
 export default Layout;

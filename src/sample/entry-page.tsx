@@ -1,6 +1,9 @@
 import * as React from 'react';
+import {Link} from 'react-router';
 import CounterDisplay from './counter-display';
 import CounterIncrease from './counter-increase';
+
+
 
 const EntryPage = (props) => {
     return (<div>

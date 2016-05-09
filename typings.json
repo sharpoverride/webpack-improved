@@ -2,8 +2,11 @@
   "name": "poc",
   "version": false,
   "ambientDependencies": {
+    "classnames": "registry:dt/classnames#0.0.0+20160316155526",
     "es6-shim": "registry:dt/es6-shim#0.31.2+20160317120654",
+    "joi": "registry:dt/joi#6.5.0+20160324101820",
     "react": "registry:dt/react#0.14.0+20160319053454",
+    "react-bootstrap": "registry:dt/react-bootstrap#0.0.0+20160423135514",
     "react-dom": "registry:dt/react-dom#0.14.0+20160316155526",
     "react-router": "registry:dt/react-router#2.0.0+20160316155526"
   }
