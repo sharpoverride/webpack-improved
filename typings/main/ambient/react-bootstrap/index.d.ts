@@ -716,6 +716,7 @@ declare module "react-bootstrap" {
     interface StaticClass extends React.ComponentClass<StaticProps> { }
     interface FormControlClass extends StaticClass {
       Static: StaticClass;
+      Feedback: StaticClass;
     }
 
     var Form: StaticClass;

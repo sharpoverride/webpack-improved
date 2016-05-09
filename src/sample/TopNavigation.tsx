@@ -19,6 +19,10 @@ const NAV_LINKS = {
     'forms': {
         link: '/form',
         title: 'Form'
+    },
+    'validation': {
+        link: '/validation',
+        title: 'Validation'
     }
 };
 

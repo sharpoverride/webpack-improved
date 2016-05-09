@@ -4,7 +4,11 @@ import {Cursor, from as buildCursorFrom} from 'immutable/contrib/cursor';
 import {fromJS} from 'immutable';
 
 const mockAppState = {
-    count: 0
+    count: 0,
+    pages: {
+        'validation': {
+        }
+    }
 }
 
 export default new class Context {

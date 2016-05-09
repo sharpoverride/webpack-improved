@@ -7,7 +7,8 @@ import {
     EntryPage,
     IntroductionPage,
     LayoutPage,
-    FormPage
+    FormPage,
+    ValidationPage
 } from './sample';
 
 const mountNode = document.querySelector('#app');
@@ -19,5 +20,6 @@ ReactDOM.render(
             <Route path="/introduction" component={IntroductionPage}/>
             <Route path="/layout" component={LayoutPage}/>
             <Route path="/form" component={FormPage}/>
+            <Route path="/validation" component={ValidationPage}/>
         </Route>
     </Router>, mountNode);
