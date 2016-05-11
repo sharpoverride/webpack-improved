@@ -2,11 +2,14 @@ import * as React from 'react';
 import CounterDisplay from './counter-display';
 import CounterIncrease from './counter-increase';
 
+import VirtualizedContent from './asdf';
+
 const EntryPage = (props) => {
+    
     return (<div>
-        <h1>Hello, World</h1>
         <CounterDisplay />
         <CounterIncrease/>
+        <VirtualizedContent />
     </div>);
 }
 
