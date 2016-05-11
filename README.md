@@ -16,7 +16,7 @@ It represents the bare minimum needed to be productive with the approach I have 
 ## Start development
 
 
-You run `npm install` after you cloned the project.
+You run `npm install & rm "node_modules/immutable/contrib/cursor/index.d.ts"`
 
 *Note:* You need to delete `index.d.ts` from `node_modules/immutable/contrib/cursor/` folder in order for `node run dev` to build corectly.
 
