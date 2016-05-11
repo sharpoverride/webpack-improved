@@ -1,15 +1,16 @@
 {
   "compilerOptions": {
     "module": "commonjs",
+    "moduleResolution": "node",
     "allowJs": true,
     "jsx": "react",
     "target": "es5",
     "sourceMap": true
   },
   "exclude": [
+    "node_modules",
     "typings/browser.d.ts",
     "typings/browser",
-    "node_modules",
     "wwwroot",
     "assets"
   ]
