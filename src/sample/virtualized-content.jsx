@@ -27,9 +27,9 @@ export default class doSomething extends React.Component<any, any> {
     }
 
     getRowHeight(data) {
-        // if (data.index % 3 === 0) {
-        //     return 150;
-        // }
+        if (data.index % 3 === 0) {
+            return 150;
+        }
         return 25;
     }
 
@@ -47,16 +47,20 @@ export default class doSomething extends React.Component<any, any> {
         return (<div
             width="100%"
         >
-            <VirtualScroll
-                height={virtualScrollHeight}
-                overscanRowCount={overscanRowCount}
-                noRowsRenderer={this.noRowsRenderer}
-                rowCount={rowCount}
-                rowHeight={25}
-                rowRenderer={this.rowRenderer}
-                scrollToIndex={scrollToIndex}
-                width={300}
-            />
+            <AutoSizer disableHeight>
+                {({width}) => (
+                    <VirtualScroll
+                        height={virtualScrollHeight}
+                        overscanRowCount={overscanRowCount}
+                        noRowsRenderer={this.noRowsRenderer}
+                        rowCount={rowCount}
+                        rowHeight={this.getRowHeight}
+                        rowRenderer={this.rowRenderer}
+                        scrollToIndex={scrollToIndex}
+                        width={width}
+                    />
+                )}
+            </AutoSizer>
         </div>);
     }
 }
