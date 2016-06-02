@@ -4,6 +4,7 @@ import {Router, Route, IndexRoute, browserHistory} from 'react-router';
 
 import CounterSample from './sample';
 import Layout from './layout';
+import TodoApp from './todomvc';
 
 const mountNode = document.querySelector('#app');
 /**
@@ -14,5 +15,6 @@ ReactDOM.render(
     <Router history={browserHistory}>
         <Route path="/" component={Layout}>
             <IndexRoute component={CounterSample}/>
+            <Route path="todos" component={TodoApp}/>
         </Route>
     </Router>, mountNode);
