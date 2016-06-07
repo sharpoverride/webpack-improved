@@ -35,11 +35,9 @@
  * update the rest of your application.
  */
 
-declare module 'immutable/contrib/cursor' {
+/// <reference path='../../../node_modules/immutable/dist/immutable.d.ts'/>
 
-  ///<reference path='../../dist/immutable.d.ts'/>
-  import Immutable = require('immutable');
-
+declare module __Cursor {
 
   export function from(
     collection: Immutable.Collection<any, any>,
@@ -236,8 +234,8 @@ declare module 'immutable/contrib/cursor' {
      * performing the merge at a point arrived at by following the keyPath.
      * In other words, these two lines are equivalent:
      *
-     *     x.updateIn(['a', 'b', 'subject'], abc => abc.merge(y));
-     *     x.mergeIn(['a', 'b', 'subject'], y);
+     *     x.updateIn(['a', 'b', 'c'], abc => abc.merge(y));
+     *     x.mergeIn(['a', 'b', 'c'], y);
      *
      */
     mergeIn(
@@ -258,8 +256,8 @@ declare module 'immutable/contrib/cursor' {
      * performing the deep merge at a point arrived at by following the keyPath.
      * In other words, these two lines are equivalent:
      *
-     *     x.updateIn(['a', 'b', 'subject'], abc => abc.mergeDeep(y));
-     *     x.mergeDeepIn(['a', 'b', 'subject'], y);
+     *     x.updateIn(['a', 'b', 'c'], abc => abc.mergeDeep(y));
+     *     x.mergeDeepIn(['a', 'b', 'c'], y);
      *
      */
     mergeDeepIn(
@@ -288,4 +286,8 @@ declare module 'immutable/contrib/cursor' {
     withMutations(mutator: (mutable: any) => any): Cursor;
   }
 
+}
+
+declare module 'immutable/contrib/cursor' {
+  export = __Cursor
 }
