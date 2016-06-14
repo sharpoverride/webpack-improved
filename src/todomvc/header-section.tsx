@@ -1,10 +1,8 @@
 import * as React from 'react';
 
-import Context, {prop} from '../context';
-import {fromJS} from 'immutable';
-
 import * as accessor from './context-accessors';
 import {Cursor} from "immutable/contrib/cursor";
+import {addTodoItem, typeTodoText} from './commands'
 
 const EnterKeyCode = 13;
 
@@ -26,24 +24,15 @@ export default class HeaderSection extends React.Component<IHeaderProps, any> {
             return;
         }
 
-        todoApp.update(v => {
-            const list = accessor.todoList(v);
-            const todoText = this.refs['todoText'] as HTMLInputElement;
-
-            const newAppState = v.set(prop(accessor.todoInput), '')
-                .set(prop(accessor.todoList), list.push(fromJS({
-                    text: todoText.value,
-                    completed: false
-                })));
-
-            return newAppState;
+        const todoText = this.refs['todoText'] as HTMLInputElement;
+        addTodoItem({
+            text: todoText.value
         });
     }
 
     onTextInputUpdate(event) {
-        const {todoApp} = this.props;
-
-        todoApp.set(prop(accessor.todoInput), event.target.value);
+        typeTodoText({
+            text:event.target.value});
     }
 
     render() {

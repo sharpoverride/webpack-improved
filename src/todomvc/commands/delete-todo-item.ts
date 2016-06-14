@@ -1,7 +1,7 @@
 import Context from '../../context';
 import * as access from '../context-accessors';
 
-export default function deleteListItem(item) {
+export default function deleteTodoItem(item) {
     const todoApp = access.todoApp(Context.cursor);
     const todoList = access.todoList(todoApp);
 

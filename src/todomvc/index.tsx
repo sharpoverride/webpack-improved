@@ -13,7 +13,8 @@ import * as accessor from './context-accessors';
 Context.cursor.set('todoApp', fromJS({
     todoList: [],
     todoInput: '',
-    filter: 'all'
+    filter: 'all',
+    allChecked: false
 }));
 
 export default class TodoApp extends React.Component<any, any> {
@@ -31,17 +32,26 @@ export default class TodoApp extends React.Component<any, any> {
         this.subscription.unsubscribe();
     }
 
+    hashFilter() {
+        const a = window.location.hash;
+        if (a.length === 0) {
+            return null;
+        }
+
+        return a.substring(2);
+    }
+
     render() {
         const {todoApp} = this.state;
 
         const todoList = accessor.todoList(todoApp);
-        const filter = accessor.filter(todoApp);
+        const filter = this.hashFilter() || accessor.filter(todoApp);
 
         const onlyRenderWhenItemsExist = (component) => (todoList.size === 0) ? null : component;
 
         var header = <HeaderSection todoApp={todoApp} />;
-        var main = onlyRenderWhenItemsExist(<MainSection todoList={todoList} />);
-        var footer = onlyRenderWhenItemsExist(<FooterSection filter={filter} />);
+        var main = onlyRenderWhenItemsExist(<MainSection todoList={todoList} filter={filter} />);
+        var footer = onlyRenderWhenItemsExist(<FooterSection filter={filter} todoList={todoList} />);
 
         return (<section
             className="todoapp"
