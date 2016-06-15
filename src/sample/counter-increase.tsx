@@ -1,8 +1,23 @@
 import * as React from 'react';
-import Context from '../context';
+import Context, {prop} from '../context';
 import * as Rx from 'rxjs';
 import {Cursor} from "immutable/contrib/cursor";
+import * as access from './context-accessors';
+import {incrementCount} from './commands';
 
+/**
+ * CounterIncrease is a React component
+ *
+ * Before rendering we subscribe to the latest application state
+ * and access the count property.
+ *
+ * When the state changes, the component is re-rendered.
+ *
+ * The components that manage their own state we call MainComponents.
+ *
+ * Any other component that a MainComponent calls should be stateless to ensure
+ * that you can track bugs easily
+ */
 export default class CounterIncrease extends React.Component<any, any> {
     subscription: Rx.Subscription;
     count: number;
@@ -10,7 +25,7 @@ export default class CounterIncrease extends React.Component<any, any> {
 
     componentWillMount() {
        this.subscription = Context.subscribe((appState: Cursor) => {
-           this.count = appState.get('count');
+           this.count = access.count(appState);
            this.appState = appState;
        });
     }
@@ -19,9 +34,13 @@ export default class CounterIncrease extends React.Component<any, any> {
        this.subscription.unsubscribe();
     }
 
+    /**
+     * Components should only invoke commands, they should not execute
+     * actions directly on the context other than subscribe.
+     * This will make the development process easier. 
+     */
     increase() {
-        const {appState, count} = this;
-        appState.set('count', count + 1);
+        incrementCount();
     }
 
     render() {
