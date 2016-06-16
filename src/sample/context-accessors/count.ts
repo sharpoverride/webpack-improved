@@ -7,13 +7,13 @@
  * everywhere.
  * With this approach you only need to look in a specific place.
  */
-import {Cursor} from 'immutable/contrib/cursor';
+import {IContextAccessor, Cursor} from '../../context';
 
 const Prop = 'count';
 
-function count(cursor: Cursor) {
+const count = <IContextAccessor>function count(cursor: Cursor) {
     return cursor.get(Prop);
 }
 
-count.prototype.Prop = Prop;
+count.Prop = Prop;
 export default count;

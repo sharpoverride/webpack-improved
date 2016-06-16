@@ -39,5 +39,9 @@ export default new class Context {
  * @returns {any|string}
  */
 export function prop(accessor) {
-    return accessor.prototype.Prop;
+    return accessor.Prop;
 }
+
+
+export {Cursor};
+export {IContextAccessor} from './accessor'
