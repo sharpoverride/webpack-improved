@@ -1,9 +1,9 @@
-import {IPropAccessor} from "../../context/prop-accessor";
+import {IPropAccessor} from "../../context";
 
 const Prop = 'todoList';
-function todoList(cursor) {
+const todoList = <IPropAccessor>function todoList(cursor) {
     return cursor.get(Prop);
 }
 
-todoList.prototype.Prop = Prop;
-export default todoList as IPropAccessor;
+todoList.Prop = Prop;
+export default todoList;

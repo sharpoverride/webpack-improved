@@ -2,6 +2,7 @@ import * as Rx from 'rxjs';
 import {PartialObserver} from 'rxjs/Observer'
 import {Cursor, from as buildCursorFrom} from 'immutable/contrib/cursor';
 import {fromJS} from 'immutable';
+import {IPropAccessor} from "./accessor";
 
 const emptyAppState = {
 };
@@ -38,10 +39,10 @@ export default new class Context {
  * @param accessor
  * @returns {any|string}
  */
-export function prop(accessor) {
+export function prop(accessor: IPropAccessor) {
     return accessor.Prop;
 }
 
 
 export {Cursor};
-export {IContextAccessor} from './accessor'
+export {IPropAccessor} from './accessor'

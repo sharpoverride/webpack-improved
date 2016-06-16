@@ -7,11 +7,11 @@
  * everywhere.
  * With this approach you only need to look in a specific place.
  */
-import {IContextAccessor, Cursor} from '../../context';
+import {IPropAccessor, Cursor} from '../../context';
 
 const Prop = 'count';
 
-const count = <IContextAccessor>function count(cursor: Cursor) {
+const count = <IPropAccessor>function count(cursor: Cursor) {
     return cursor.get(Prop);
 }
 

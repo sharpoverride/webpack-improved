@@ -1,10 +1,11 @@
-import {Cursor} from 'immutable/contrib/cursor';
-import {IPropAccessor} from "../../context/prop-accessor";
+import {IPropAccessor, Cursor} from "../../context";
 
 const Prop = 'editText';
 
-export default function todoItemEditing(item: Cursor) {
+const todoItemEditing = <IPropAccessor>function todoItemEditing(item: Cursor) {
     return item.get(Prop);
 }
 
-todoItemEditing.prototype.Prop = Prop;
+todoItemEditing.Prop = Prop;
+
+export default todoItemEditing;

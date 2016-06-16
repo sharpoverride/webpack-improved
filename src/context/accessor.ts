@@ -1,6 +1,6 @@
 import {Cursor} from 'immutable/contrib/cursor';
 
-export interface IContextAccessor {
+export interface IPropAccessor {
     (cursor: Cursor): any;
     Prop: string;
 }

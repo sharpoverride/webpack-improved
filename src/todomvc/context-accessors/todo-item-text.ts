@@ -1,9 +1,9 @@
-import {IPropAccessor} from "../../context/prop-accessor";
+import {IPropAccessor} from "../../context";
 
 const Prop = 'text';
-function text(cursor) {
+const text = <IPropAccessor>function text(cursor) {
     return cursor.get(Prop);
 }
 
-text.prototype.Prop = Prop;
-export default text as IPropAccessor;
+text.Prop = Prop;
+export default text;

@@ -1,10 +1,10 @@
-import {IPropAccessor} from "../../context/prop-accessor";
+import {IPropAccessor} from "../../context";
 
 const Prop = 'filter';
-function filter(cursor) {
+const filter = <IPropAccessor>function filter(cursor) {
     return cursor.get(Prop);
 }
 
-filter.prototype.Prop = Prop;
-export default filter as IPropAccessor;
+filter.Prop = Prop;
+export default filter;
 
