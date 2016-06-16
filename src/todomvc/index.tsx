@@ -28,7 +28,7 @@ export default class TodoApp extends React.Component<any, any> {
         });
     }
     
-    componetWillUnmount() {
+    componentWillUnmount() {
         this.subscription.unsubscribe();
     }
 
