@@ -1,5 +1,6 @@
 import Context, {prop} from '../context';
 import * as access from './context-accessors';
+import EntryPage from './entry-page';
 
 /**
  * This is a immediately invoked function declaration.
@@ -20,4 +21,4 @@ import * as access from './context-accessors';
     );
 })();
 
-export {default as EntryPage } from './entry-page';
+export default EntryPage;

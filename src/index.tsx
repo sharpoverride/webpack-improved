@@ -1,9 +1,8 @@
-import * as Rx from 'rxjs';
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import {Router, Route, IndexRoute, browserHistory} from 'react-router';
 
-import {EntryPage} from './sample';
+import CounterSample from './sample';
 import Layout from './layout';
 
 const mountNode = document.querySelector('#app');
@@ -14,6 +13,6 @@ const mountNode = document.querySelector('#app');
 ReactDOM.render(
     <Router history={browserHistory}>
         <Route path="/" component={Layout}>
-            <IndexRoute component={EntryPage}/>
+            <IndexRoute component={CounterSample}/>
         </Route>
     </Router>, mountNode);
